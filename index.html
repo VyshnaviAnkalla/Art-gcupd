@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            overflow: hidden;
+            background-color: #333;
+        }
+        .navbar a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        .artwork {
+            width: 30%;
+            margin: 1.66%;
+            float: left;
+            position: relative;
+        }
+        .artwork img {
+            width: 100%;
+            height: auto;
+        }
+        .artwork .details {
+            display: none;
+            position: absolute;
+            bottom: 0;
+            background: rgba(0,0,0,0.75);
+            color: white;
+            width: 100%;
+            padding: 10px;
+        }
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#home">Home</a>
+        <a href="#exhibitions">Exhibitions</a>
+        <a href="#artists">Artists</a>
+        <a href="#memberships">Memberships</a>
+    </div>
+    <div class="artwork">
+        <img src="artwork.jpg" alt="Artwork by John Doe, 2020">
+        <div class="details">
+            <p>Artist: John Doe</p>
+            <p>Year: 2020</p>
+        </div>
+    </div>
+    <div class="footer">
+        <p>Copyright &copy; 2022 CanvasEcho</p>
+    </div>
+    <script>
+        var artworks = document.getElementsByClassName('artwork');
+        for (var i = 0; i < artworks.length; i++) {
+            artworks[i].addEventListener('mouseover', function() {
+                this.getElementsByClassName('details')[0].style.display = 'block';
+            });
+            artworks[i].addEventListener('mouseout', function() {
+                this.getElementsByClassName('details')[0].style.display = 'none';
+            });
+        }
+    </script>
+</body>
+</html>
